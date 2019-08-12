@@ -31,7 +31,7 @@ export default {
       iconrList: [{
         id: '0001',
         imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-        desc: '景点门票景点见到'
+        desc: '景点门票'
       }, {
         id: '0002',
         imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
@@ -89,33 +89,35 @@ export default {
   .icons >>> .swiper-container
     height 0
     padding-bottom 50%
-  .icon
-    float: left
-    width:  25%
-    padding-bottom: 25%
-    position relative
-    height 0
-    overflow hidden
-    .iconImg
-      position absolute
-      top: 0
-      left: 0
-      right: 0
-      bottom .44rem
-      box-sizing: border-box
-      padding .1rem
-      .iconImg-img
-        height  100%
-        display block
-        margin 0 auto
-    .icon-desc
-      position absolute
-      left 0
-      right 0
-      bottom 0
-      height .44rem
-      line-height .44rem
-      color $darkTextColor
-      text-align center
-      ellipsis()
+  .icons
+    background-color #fff
+    .icon
+      float: left
+      width:  25%
+      padding-bottom: 25%
+      position relative
+      height 0
+      overflow hidden
+      .iconImg
+        position absolute
+        top: .25rem
+        left: 0
+        right: 0
+        bottom 0
+        box-sizing: border-box
+        height: 1.1rem
+        .iconImg-img
+          height  100%
+          display block
+          margin 0 auto
+      .icon-desc
+        position absolute
+        left 0
+        right 0
+        bottom 0
+        height .44rem
+        line-height .44rem
+        color $darkTextColor
+        text-align center
+        ellipsis()
 </style>
