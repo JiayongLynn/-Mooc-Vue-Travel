@@ -23,6 +23,8 @@
                   </div>
                   <!-- <img class="swipe-img" :src='Item.imgUrl' alt=""> -->
                 </swiper-slide>
+                <!-- 滚动条 -->
+                <!-- <div class="swiper-scrollbar"   slot="scrollbar"></div> -->
               </swiper>
           </div>
       </div>
@@ -35,9 +37,10 @@ export default {
    data () {
     return {
       swiperOption:{
-        slidesPerView: 3.5,
+        slidesPerView: 3.4,
         spaceBetween: 0,
         freeMode: true,
+        slidesOffsetBefore : 10
       },
       swiperList: [{
         id: '0001',
@@ -81,14 +84,14 @@ export default {
         price:12.8
       },{
         id: '0009',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1507/52/0e7cb0d161c785b41bab3664bf8c692a.water.jpg_250x250_45f0a538.jpg',
-        title:'水濂山乐民游艺园',
+        imgUrl: 'http://img1.qunarzz.com/sight/p0/1603/bf/bfd3325186a7160590.water.jpg_250x250_995db565.jpg',
+        title:'华南mall欢笑天地',
         price:12.8
       },{
         id: '0010',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1507/52/0e7cb0d161c785b41bab3664bf8c692a.water.jpg_250x250_45f0a538.jpg',
+        imgUrl: 'http://img1.qunarzz.com/sight/p0/1806/f5/f56a5d7c095aed73a3.img.jpg_250x250_48babef3.jpg',
         title:'水濂山乐民游艺园',
-        price:12.8
+        price:54.9
       }]
     }
   }
@@ -116,6 +119,8 @@ export default {
           position absolute
           font-size: .24rem
           color #616161
+      .swipper-hot >>> .swipper-container
+        padding-left: .24rem
       .swipper-hot
         width:100%
         height:0
