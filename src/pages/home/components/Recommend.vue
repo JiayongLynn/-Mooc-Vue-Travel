@@ -11,6 +11,11 @@
                 <!-- slides -->
                 <swiper-slide v-for="Item in swiperList" v-bind:key="Item.id">
                   <div class="hot-swipper-item">
+                      <div class="hot-top">
+                        <img style="width:100%" v-if="Item.top == 1" src="http://img1.qunarzz.com/piao/fusion/1710/ab/159673b63e6ca702.png" alt="">
+                        <img style="width:100%" v-if="Item.top == 2" src="http://img1.qunarzz.com/piao/fusion/1710/2d/36d0c4adaebbbc02.png" alt="">
+                        <img style="width:100%" v-if="Item.top == 3" src="http://img1.qunarzz.com/piao/fusion/1710/67/edc47ffef9e96b02.png" alt="">
+                      </div>
                       <div class="item-img">
                           <img :src="Item.imgUrl" alt="">
                       </div>
@@ -46,17 +51,20 @@ export default {
         id: '0001',
         imgUrl: 'http://img1.qunarzz.com/sight/p0/1511/34/34170b200db08a5a90.img.jpg_250x250_02eb6e72.jpg',
         title:'隐贤山庄',
-        price:79
+        price:79,
+        top:1
       }, {
         id: '0002',
         imgUrl: 'http://img1.qunarzz.com/sight/p0/1603/1d/1d756648039bf30f90.water.jpg_250x250_18d11102.jpg',
         title:'东莞香市动物园',
-        price:109
+        price:109,
+        top:2
       }, {
         id: '0003',
         imgUrl: 'http://img1.qunarzz.com/sight/p0/1902/7a/7ac34ad6cc6e7497a3.img.jpg_250x250_94a5f69e.jpg',
         title:'东莞龙凤山庄影视渡假村',
-        price:68
+        price:68,
+        top:3
       },{
         id: '0004',
         imgUrl: 'http://img1.qunarzz.com/sight/p0/1905/af/af4f95f579ee43b1a3.water.jpg_250x250_5d79e709.jpg',
@@ -127,6 +135,10 @@ export default {
         padding-bottom:41%
         .hot-swipper-item
           width 2rem
+          .hot-top
+            position:absolute;
+            width:.84rem;
+            height:.4rem
           .item-img
             width 2rem
             height 0
