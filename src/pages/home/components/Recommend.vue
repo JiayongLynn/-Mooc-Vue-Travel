@@ -9,7 +9,7 @@
           <div class="swipper-hot">
               <swiper :options="swiperOption">
                 <!-- slides -->
-                <swiper-slide v-for="Item in swiperList" v-bind:key="Item.id">
+                <swiper-slide v-for="Item in RecommandList" v-bind:key="Item.id">
                   <div class="hot-swipper-item">
                       <div class="hot-top">
                         <img style="width:100%" v-if="Item.top == 1" src="http://img1.qunarzz.com/piao/fusion/1710/ab/159673b63e6ca702.png" alt="">
@@ -39,6 +39,11 @@
 <script>
 export default {
   name: 'Recommend',
+  props:{
+    RecommandList:{
+      type:Array
+    }
+  },
    data () {
     return {
       swiperOption:{
@@ -46,61 +51,7 @@ export default {
         spaceBetween: 0,
         freeMode: true,
         slidesOffsetBefore : 10
-      },
-      swiperList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1511/34/34170b200db08a5a90.img.jpg_250x250_02eb6e72.jpg',
-        title:'隐贤山庄',
-        price:79,
-        top:1
-      }, {
-        id: '0002',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1603/1d/1d756648039bf30f90.water.jpg_250x250_18d11102.jpg',
-        title:'东莞香市动物园',
-        price:109,
-        top:2
-      }, {
-        id: '0003',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1902/7a/7ac34ad6cc6e7497a3.img.jpg_250x250_94a5f69e.jpg',
-        title:'东莞龙凤山庄影视渡假村',
-        price:68,
-        top:3
-      },{
-        id: '0004',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1905/af/af4f95f579ee43b1a3.water.jpg_250x250_5d79e709.jpg',
-        title:'东莞观音山旅游风景区',
-        price:38.9
-      },{
-        id: '0005',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1607/6c/6ce376cd5775ce6fb4.img.jpg_250x250_b7361b12.jpg',
-        title:'虎英水上乐园（原棕榈谷水城）',
-        price:75
-      },{
-        id: '0006',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1602/a2/a2db6aea3707663a90.img.jpg_250x250_f06fcda4.jpg',
-        title:'梦幻百花洲',
-        price:51.2
-      },{
-        id: '0007',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1906/ba/ba0ea8a459c73871a3.img.jpg_250x250_42d709b8.jpg',
-        title:'隐贤山庄水上乐园',
-        price:74
-      },{
-        id: '0008',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1507/52/0e7cb0d161c785b41bab3664bf8c692a.water.jpg_250x250_45f0a538.jpg',
-        title:'水濂山乐民游艺园',
-        price:12.8
-      },{
-        id: '0009',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1603/bf/bfd3325186a7160590.water.jpg_250x250_995db565.jpg',
-        title:'华南mall欢笑天地',
-        price:12.8
-      },{
-        id: '0010',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1806/f5/f56a5d7c095aed73a3.img.jpg_250x250_48babef3.jpg',
-        title:'水濂山乐民游艺园',
-        price:54.9
-      }]
+      }
     }
   }
 }

@@ -20,6 +20,11 @@
 <script>
 export default {
   name: 'HomeIcons',
+  props:{
+    iconList:{
+      type:Array
+    }
+  },
   data () {
     return {
       swiperOption: {
@@ -27,50 +32,13 @@ export default {
           el: '.swiper-pagination'
         }
         // loop: true
-      },
-      iconrList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-        desc: '景点门票'
-      }, {
-        id: '0002',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
-        desc: '东莞必游'
-      }, {
-        id: '0003',
-        imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20195/f44e55751b9343cfb624e2982261f485.png',
-        desc: '黄腾峡景区'
-      }, {
-        id: '0004',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1805/3a/754b47f658e9c602.png',
-        desc: '消暑玩水'
-      }, {
-        id: '0005',
-        imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/184e261814a5d07a5d3d08cd29cf590d.png',
-        desc: '长隆度假区'
-      }, {
-        id: '0006',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/87/20656da0ac042002.png',
-        desc: '洞天仙境'
-      }, {
-        id: '0007',
-        imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20194/cba147cf6cfcea7109d0bff6aac6f626.png',
-        desc: '香市动物园'
-      }, {
-        id: '0008',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/90/59a2f523ee2f9202.png',
-        desc: '隐贤山庄'
-      }, {
-        id: '0009',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png',
-        desc: '峰林小镇'
-      }]
+      }
     }
   },
   computed: {
     pages() {
       const pages = [];
-      this.iconrList.forEach((item,index)=>{
+      this.iconList.forEach((item,index)=>{
         const page = Math.floor(index / 8);
         if(!pages[page]){
           pages[page] = []
