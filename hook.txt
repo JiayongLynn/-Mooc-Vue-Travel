@@ -5,3 +5,4 @@ hook n.3:n.2成功，再test
 hook n.4  n3失败
 hook n.5  n4成功
 hook n.6 5失败
+hook n.7 6失败
