@@ -167,7 +167,7 @@
     .border-rightbottom::after,
     .border-topright::before,
     .border-bottomleft::before {
-        transform: scaleY(.33333);
+        /* transform: scaleY(.33333); */
     }
     .border-right::before,
     .border-left::before,

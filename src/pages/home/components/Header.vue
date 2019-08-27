@@ -9,7 +9,7 @@
       </div>
       <router-link to="/city">
         <div class="header-right">
-          <span style="font-size:.24rem">{{this.city}}</span>
+          <span style="font-size:.3rem">{{this.city}}</span>
           <span class="iconfont arrow-icon">&#xe64a;</span>
         </div>
       </router-link>
@@ -56,6 +56,7 @@ export default {
       font-size :0
       color #fff
       .arrow-icon
-        font-size: 0.24rem
+        font-size: 0.26rem
+        // margin-top: -.34rem
         // margin-left :-.04rem
 </style>
