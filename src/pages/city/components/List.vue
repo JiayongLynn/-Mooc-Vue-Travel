@@ -14,125 +14,37 @@
         <div class="area">
           <div class='title border-topbottom'>热门城市</div>
           <div class="button-list">
-              <div class="warpper-button">
+              <div class="warpper-button" v-for="item of hotcityList" :key="item.id">
                   <div class="button">
-                        东莞
-                  </div>
-              </div>
-              <div class="warpper-button">
-                  <div class="button">
-                        东莞
-                  </div>
-              </div>
-              <div class="warpper-button">
-                  <div class="button">
-                        东莞
-                  </div>
-              </div>
-              <div class="warpper-button">
-                  <div class="button">
-                        东莞
-                  </div>
-              </div>
-              <div class="warpper-button">
-                  <div class="button">
-                        东莞
-                  </div>
-              </div>
-              <div class="warpper-button">
-                  <div class="button">
-                        东莞
-                  </div>
-              </div>
-              <div class="warpper-button">
-                  <div class="button">
-                        东莞
+                        {{item.name}}
                   </div>
               </div>
           </div>
         </div> 
-        <div class="area">
-          <div class='title border-topbottom'>A</div>
-          <div class="item-list">
+        <div class="area" v-for="(item,key) of citylist" :key="key">
+          <div class='title border-topbottom'>{{key}}</div>
+          <div class="item-list" v-for="cityitem of item" :key='cityitem.id'>
               <div class="item border-bottom">
-                  阿拉尔
-              </div>
-              <div class="item border-bottom">
-                  阿拉尔
-              </div>
-              <div class="item border-bottom">
-                  阿拉尔
-              </div>
-              <div class="item border-bottom">
-                  阿拉尔
-              </div>
-              <div class="item border-bottom">
-                  阿拉尔
+                  {{cityitem.name}}
               </div>
           </div>
-          <div class='title border-topbottom'>B</div>
-          <div class="item-list">
-              <div class="item border-bottom">
-                  阿拉尔
-              </div>
-              <div class="item border-bottom">
-                  阿拉尔
-              </div>
-              <div class="item border-bottom">
-                  阿拉尔
-              </div>
-              <div class="item border-bottom">
-                  阿拉尔
-              </div>
-              <div class="item border-bottom">
-                  阿拉尔
-              </div>
-          </div>
-          <div class='title border-topbottom'>C</div>
-          <div class="item-list">
-              <div class="item border-bottom">
-                  阿拉尔
-              </div>
-              <div class="item border-bottom">
-                  阿拉尔
-              </div>
-              <div class="item border-bottom">
-                  阿拉尔
-              </div>
-              <div class="item border-bottom">
-                  阿拉尔
-              </div>
-              <div class="item border-bottom">
-                  阿拉尔
-              </div>
-          </div>
-           <div class='title border-topbottom'>D</div>
-          <div class="item-list">
-              <div class="item border-bottom">
-                  阿拉尔
-              </div>
-              <div class="item border-bottom">
-                  阿拉尔
-              </div>
-              <div class="item border-bottom">
-                  阿拉尔
-              </div>
-              <div class="item border-bottom">
-                  阿拉尔
-              </div>
-              <div class="item border-bottom">
-                  阿拉尔
-              </div>
-          </div>
+        </div>
       </div>
-     </div> 
-   </div>
+    </div> 
 </template>
 
 <script>
 import Bscroll from 'better-scroll'
 export default {
   name: 'CityList',
+  props:{
+      citylist:{
+          type:Object
+      },
+      hotcityList:{
+          type:Array
+      }
+  },
   mounted(){
     this.scroll = new Bscroll(this.$refs.wrapper);
   }

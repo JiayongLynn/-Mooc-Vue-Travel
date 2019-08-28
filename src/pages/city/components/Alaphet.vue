@@ -1,22 +1,7 @@
 <template>
     <ul class="alaphet-list">
-       <li class="item">
-          A
-       </li>
-       <li class="item">
-          A
-       </li>
-       <li class="item">
-          A
-       </li>
-       <li class="item">
-          A
-       </li>
-       <li class="item">
-          A
-       </li>
-       <li class="item">
-          A
+       <li class="item" v-for="(item,key) of citylist" :key="key">
+          {{key}}
        </li>
     </ul>
 </template>
@@ -24,7 +9,11 @@
 <script>
 export default {
   name: 'CityAlaphet',
-
+  props:{
+      citylist:{
+          type:Object
+      },
+  },
 }
 </script>
 
