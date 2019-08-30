@@ -2,8 +2,8 @@
   <div class="city">
     <city-header></city-header>
     <city-search></city-search>
-    <city-list :citylist='cityList' :hotcityList='hotcityList'></city-list>
-    <city-alaphet :citylist='cityList'></city-alaphet>
+    <city-list :citylist='cityList' :hotcityList='hotcityList' :alapha='alapha'></city-list>
+    <city-alaphet :citylist='cityList' @jumpArea='handleLetterChange'></city-alaphet>
   </div>
  
 </template>
@@ -26,7 +26,8 @@ export default {
   data(){
     return{
       cityList:{},
-      hotcityList:[]
+      hotcityList:[],
+      alapha:"",
     }
   },
   methods:{
@@ -40,6 +41,9 @@ export default {
             this.cityList = data.cities;
             this.hotcityList = data.hotCities;
         }
+    },
+    handleLetterChange(value){
+        this.alapha = value;
     }
 
   },
