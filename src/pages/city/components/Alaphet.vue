@@ -20,11 +20,6 @@ export default {
           type:Object
       },
   },
-  data(){
-     return{
-        touchStatus:false
-     }
-  },
   computed:{
      alaphetList(){
         const alaphet = [];
@@ -33,6 +28,16 @@ export default {
         }
         return alaphet;
      }
+  },
+  data(){
+     return{
+        touchStatus:false,
+        StartY:0,
+        timer:null,
+     }
+  },  
+  updated () {
+     this.StartY = this.$refs['A'][0].offsetTop;
   },
   methods:{
      handleChange(event){
@@ -43,12 +48,16 @@ export default {
      },
      handleTouchMove(event){
         if(this.touchStatus){
-           const StartY = this.$refs['A'][0].offsetTop;
-           const SlideY = event.touches[0].clientY - 79;
-           const index = Math.floor((SlideY - StartY)/20);
-           if(index >= 0 && index < this.alaphetList.length){
-            this.$emit('jumpArea',this.alaphetList[index]);
+           if(this.timer){
+              clearTimeout(this.timer);
            }
+           this.timer = setTimeout(()=>{
+               const SlideY = event.touches[0].clientY - 79;
+               const index = Math.floor((SlideY - this.StartY)/20);
+               if(index >= 0 && index < this.alaphetList.length){
+                  this.$emit('jumpArea',this.alaphetList[index]);
+               }
+           },16)
         }
      },
      handleTouchEnd(){
