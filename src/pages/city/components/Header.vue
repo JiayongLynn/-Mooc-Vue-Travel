@@ -1,8 +1,10 @@
 <template>
    <div class="city-header">
+      <router-link to="/">
       <div class="city-left">
         <div class="iconfont back-icon">&#xe624;</div>
       </div>
+      </router-link>
         <h2 class="city-title">城市选择</h2>      
    </div>
 </template>
@@ -23,6 +25,7 @@ export default {
       width: .64rem
       position absolute
       left 0
+      color #fff
       display inline-block
       .back-icon
         text-align:center
